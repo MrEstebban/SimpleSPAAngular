@@ -1,0 +1,11 @@
+<h1>Buscando: <small>{{termino}}</small></h1>
+<br>
+<div *ngIf="resultadoHeroes.length == 0" class="card text-white bg-primary mb-3" style="max-width: 80%;">
+    <div class="card-body">
+      <p class="card-text" style="text-align: center;">No se encontró ningun resultado relacionado con la busqueda.</p>
+    </div>
+  </div>
+
+<div *ngIf="resultadoHeroes.length > 0" class="card-columns">
+    <app-heroe-tarjeta *ngFor="let heroe of resultadoHeroes; let i = index" [heroe]="heroe" [indice] = "heroe.idx"></app-heroe-tarjeta>
+</div>
